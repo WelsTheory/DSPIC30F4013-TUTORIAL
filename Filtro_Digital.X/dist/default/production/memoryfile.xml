@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/default/production/Filtro_Digital.X.production.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>2048</length>
+      <used>24</used>
+      <free>2024</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>24192</length>
+      <used>3978</used>
+      <free>20214</free>
+    </memory>
+  </executable>
+</project>
