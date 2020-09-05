@@ -11,7 +11,9 @@
 #include <libpic30.h>
 
 int16_t i;
+int16_t duty;
 void Timer1_Init(void);
+void PWM_Init(void);
 void Timer3_Init_32(void);
 void __attribute__((interrupt,auto_psv)) _T1Interrupt(void);
 void __attribute__((interrupt,auto_psv)) _T3Interrupt(void);
@@ -20,13 +22,30 @@ int main(void) {
     ADPCFG = 0x1FFF; //TODOS los pines Digitales
     TRISB = 0; //SALIDA
     LATB = 1;
-    Timer1_Init();
-    Timer3_Init_32();
+    PWM_Init();
+    //Timer1_Init();
+    //Timer3_Init_32();
     while(1){
             //__delay_ms(1);
     }
 }
 
+void PWM_Init(void){
+    PR2 = 59999; //Periodo
+    OC1RS = 1; //50% DUTY CYCLE
+    OC1R = 1;
+    OC1CON = 0x06;
+    //OC1CONbits.OCTSEL = 0; //TMR2
+    //OC1CONbits.OCM = 0b110; //PWM
+    T2CONbits.T32 = 0; //16 bits
+    T2CONbits.TCKPS = 1; //prescaler 8
+/*______ Manejo de Interrupción_________*/
+    IFS0bits.T2IF =  0;
+    IPC1bits.T2IP =  4;
+    IEC0bits.T2IE =  1;
+/*_______ Iniciar el Temporizador_______*/
+    T2CONbits.TON =  1;
+}
 
 /*
 PRX = FCY*TIEMPO/Pres - 1;
@@ -78,6 +97,19 @@ void Timer3_Init_32(void){
     T2CONbits.TON =  1;
 }
 
+void __attribute__((interrupt,auto_psv)) _T2Interrupt(void){
+    IFS0bits.T2IF =  0;
+    if(duty < 59999){
+        OC1RS = duty;
+        duty = duty + 1000;
+    }
+    else{
+        duty = 1;
+        OC1RS = 1;
+    }
+    
+    LATBbits.LATB1 = ~LATBbits.LATB1;
+}
 
 void __attribute__((interrupt,auto_psv)) _T3Interrupt(void){
     IFS0bits.T3IF =  0;
