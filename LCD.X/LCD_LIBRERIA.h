@@ -12,3 +12,7 @@
 #define E_PIN    LATBbits.LATB11   /* PORT for E  */
 #define TRIS_E   TRISBbits.TRISB11    /* TRIS for E  */
 
+//Funciones
+void LCD_Caracter(unsigned char data);
+void LCD_Comando(unsigned char cmd);
+void LCD_Init(void);

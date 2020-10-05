@@ -13,8 +13,6 @@
 
 int main(void) {
     ADPCFG= 0x1FFF;      // Configurando el Puerto B como I/O Digital
-    LATB  = 0x0000;
-    TRISB = 0x0000;      // Configurando todo el Puerto B como salida Digital
-    LATD  = 0x00;
-    TRISD = 0x00;        // Configurando el Puerto D como salida Digital
+    LCD_Init();
+    LCD_Caracter('E');
 }
