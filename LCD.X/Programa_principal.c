@@ -7,6 +7,9 @@
 
 
 #include "xc.h"
+#include "Configuracion.h"
+#include "LCD_LIBRERIA.h"
+
 
 int main(void) {
     ADPCFG= 0x1FFF;      // Configurando el Puerto B como I/O Digital
