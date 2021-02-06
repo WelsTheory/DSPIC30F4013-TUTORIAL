@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/production/ADC.X.production.elf">
+  <executable name="dist/default/production/ADC_Parte1.X.production.elf">
     <memory name="data">
       <units>bytes</units>
       <length>2048</length>
-      <used>2</used>
-      <free>2046</free>
+      <used>280</used>
+      <free>1768</free>
     </memory>
     <memory name="program">
       <units>bytes</units>
-      <length>24192</length>
-      <used>513</used>
-      <free>23679</free>
+      <length>48768</length>
+      <used>10101</used>
+      <free>38667</free>
     </memory>
   </executable>
 </project>
