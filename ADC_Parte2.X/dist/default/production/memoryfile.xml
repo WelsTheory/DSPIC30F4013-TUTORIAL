@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/production/ADC_Parte1.X.production.elf">
+  <executable name="dist/default/production/ADC_Parte2.X.production.elf">
     <memory name="data">
       <units>bytes</units>
       <length>2048</length>
@@ -10,9 +10,9 @@
     </memory>
     <memory name="program">
       <units>bytes</units>
-      <length>48768</length>
-      <used>10077</used>
-      <free>38691</free>
+      <length>24192</length>
+      <used>10203</used>
+      <free>13989</free>
     </memory>
   </executable>
 </project>

@@ -207,10 +207,10 @@ section                    address   length (PC units)   length (bytes) (dec)
 .const                      0x180a                0x34            0x4e  (78)
 .text                       0x183e               0x150           0x1f8  (504)
 .dinit                      0x198e                0xee           0x165  (357)
-.text                       0x1a7c                0xb6           0x111  (273)
-.init.delay32               0x1b32                0x1c            0x2a  (42)
+.text                       0x1a7c                0xa6            0xf9  (249)
+.init.delay32               0x1b22                0x1c            0x2a  (42)
 
-                 Total "program" memory used (bytes):         0x2775  (10101) 20%
+                 Total "program" memory used (bytes):         0x275d  (10077) 20%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x800]
@@ -347,13 +347,13 @@ External Symbols in Program Memory (by address):
                   0x00194e                  _LCD_XY
                   0x001974                  _LCD_String
                   0x001a7c                  _main
-                  0x001aee                  _ADC_Init
-                  0x001b32                  ___delay32
+                  0x001ade                  _ADC_Init
+                  0x001b22                  ___delay32
                   0xf8000a                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x001aee                  _ADC_Init
+                  0x001ade                  _ADC_Init
                   0x0018e8                  _LCD_Caracter
                   0x001882                  _LCD_Comando
                   0x00183e                  _LCD_Init
@@ -375,7 +375,7 @@ External Symbols in Program Memory (by name):
                   0x000618                  ___Printf_fF
                   0x00094e                  ___Putfld_fF
                   0x0015b8                  ___adddf3
-                  0x001b32                  ___delay32
+                  0x001b22                  ___delay32
                   0x0012a4                  ___divdf3
                   0x001358                  ___divsi3
                   0x0004a2                  ___ePrintf_fF
@@ -713,7 +713,7 @@ __RESERVED2
 
 __FGS             0xf8000a          0x2
  *(__FGS.sec*)
- __FGS.sec        0xf8000a          0x2 /CW/_FGSðmW
+ __FGS.sec        0xf8000a          0x2 /CW/_FGS`Ø^
                   0xf8000a                  __FGS.sec
 
 __FICD
@@ -1489,7 +1489,7 @@ LOAD c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-c-elf.a
 END GROUP
 OUTPUT(dist/default/production/ADC_Parte1.X.production.elf elf32-pic30)
-LOAD /CW/_FGSðmW
+LOAD /CW/_FGS`Ø^
 LOAD jump_table
 LOAD default_isr
 LOAD data_init
@@ -1699,12 +1699,12 @@ __c30_signature
 .dinit            0x00198e         0xee
  .dinit           0x00198e         0xee data_init
 
-.text             0x001a7c         0xb6
- .text            0x001a7c         0x72 build/default/production/Programa_principal.o
+.text             0x001a7c         0xa6
+ .text            0x001a7c         0x62 build/default/production/Programa_principal.o
                   0x001a7c                  _main
- .text            0x001aee         0x44 build/default/production/ADC_Libreria.o
-                  0x001aee                  _ADC_Init
+ .text            0x001ade         0x44 build/default/production/ADC_Libreria.o
+                  0x001ade                  _ADC_Init
 
-.init.delay32     0x001b32         0x1c
- .init.delay32    0x001b32         0x1c c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
-                  0x001b32                  ___delay32
+.init.delay32     0x001b22         0x1c
+ .init.delay32    0x001b22         0x1c c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
+                  0x001b22                  ___delay32
